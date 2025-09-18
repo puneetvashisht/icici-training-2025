@@ -1,0 +1,21 @@
+server:
+    port: 8000
+spring:
+  application:
+    name: api-gateway-app
+  # cloud:
+  #   gateway:
+  #     routes:
+  #       - id: trip-booking-app
+  #         uri: lb://trip-booking-app
+  #         predicates:
+  #           - Path=/trip-booking/**
+  #       - id: trip-app
+  #         uri: lb://trip-app
+  #         predicates:
+  #           - Path=/api/trips/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true

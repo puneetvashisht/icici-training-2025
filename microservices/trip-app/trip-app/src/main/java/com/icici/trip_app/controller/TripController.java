@@ -39,7 +39,7 @@ public class TripController {
     }
     
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<Trip> createTrip(@RequestBody Trip trip) {
         Trip createdTrip = tripService.createTrip(trip);
         return ResponseEntity.status(201).body(createdTrip);
