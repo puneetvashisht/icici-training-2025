@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://D:/work/trainings/icici-config-repo
+          search-paths: '{application}'
+          clone-on-start: true
+          default-label: master
+
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
