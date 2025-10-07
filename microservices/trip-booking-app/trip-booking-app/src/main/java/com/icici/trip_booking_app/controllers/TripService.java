@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.icici.trip_booking_app.dto.Trip;
 
-@FeignClient(name="trip-app")
+@FeignClient(name="MY-NODE-APP")
+// @FeignClient(name="trip-app")
 public interface TripService {
     @GetMapping("/api/trips/search/{title}")
     Trip getTripByTitle(@PathVariable String title);

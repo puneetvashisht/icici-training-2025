@@ -7,6 +7,14 @@ const Trip = require('./schemas/Trip');
 const cors = require('cors');
 const requestTime = require('./middlewares/requestTimeLog');
 var colors = require('@colors/colors');
+const eurekaClient = require('./connect');
+const consumer = require('./consumer')
+eurekaClient.start(function(error) {
+  console.log(error || 'Eureka registration complete');
+});
+
+consumer();
+
 
 async function connectToDb() {
   await mongoose.connect('mongodb://127.0.0.1:27017/icici_db');

@@ -1,5 +1,7 @@
 package com.icici.trip_app.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +23,12 @@ public class Trip {
     //ignore this field for database mapping
     @Transient
     int port;
+
+    @Transient
+    LocalDate starDate;
+
+    @Transient
+    LocalDate endDate;
 
     public Trip() {
     }
@@ -71,5 +79,23 @@ public class Trip {
         this.port = port;
     }
 
+    public LocalDate getStarDate() {
+        return starDate;
+    }
+
+    public void setStarDate(LocalDate starDate) {
+        this.starDate = starDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+
+    
     
 }

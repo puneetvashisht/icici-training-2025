@@ -16,6 +16,14 @@ router.get('/trips', advancedResults(Trip), async (req, res) => {
     res.json(res.advancedResults);
 });
 
+
+router.get('/trips/search/:title', async (req, res) => {
+    const { title } = req.params;
+    //case insensitive search
+    const trips = await Trip.findOne({ title: { $regex: title, $options: 'i' } });
+    res.json(trips);
+});
+
 router.get('/trips/:id', async (req, res) => {
     const { id } = req.params;
     const trip = await Trip.findById(id);
@@ -27,6 +35,8 @@ router.get('/trips/:id', async (req, res) => {
     }
     res.json(trip);
 });
+
+
 
 router.post('/trips', async (req, res) => {
     const newTrip = new Trip(req.body);

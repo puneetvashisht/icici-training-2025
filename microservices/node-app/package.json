@@ -1,21 +1,15 @@
 {
-  "name": "rest-api-db",
+  "name": "app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "description": "",
   "dependencies": {
-    "@colors/colors": "^1.6.0",
-    "cors": "^2.8.5",
     "eureka-js-client": "^4.5.0",
-    "express": "^5.1.0",
-    "kafkajs": "^2.2.4",
-    "mongoose": "^8.18.1"
+    "express": "^5.1.0"
   }
 }
